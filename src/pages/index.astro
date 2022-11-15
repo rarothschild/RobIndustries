@@ -2,8 +2,24 @@
 import { Image } from '@astrojs/image/components';
 // Component Imports
 import Layout from '../layouts/Layout.astro';
+import PhotoViewport from '../components/PhotoViewport.astro';
+
 import MainPic from '../images/me/Main.jpg'
 
+import nature1 from '../images/Nature/PXL_20220920_215946391.jpg';
+import nature2 from '../images/Nature/PXL_20221016_010801721.jpg';
+import nature3 from '../images/Nature/PXL_20221018_181309738.jpg';
+import nature4 from '../images/Nature/PXL_20221029_203935610.jpg';
+import nature5 from '../images/Nature/PXL_20221029_221136208.jpg';
+
+import sports2 from '../images/Sports/PXL_20220306_200708888.jpg';
+import sports3 from '../images/Sports/PXL_20220601_040603592~2.jpg';
+import sports4 from '../images/Sports/PXL_20220730_000021384.jpg';
+import sports5 from '../images/Sports/PXL_20220803_161524688.jpg';
+
+
+const PhotosNature = [nature1,nature2,nature3,nature4,nature5];
+const PhotosSports = [sports2,sports3,sports4,sports5];
 ---
 
 <Layout title="Home">
@@ -18,6 +34,10 @@ import MainPic from '../images/me/Main.jpg'
 						and am currently teaching myself Web Development in conjunction with other Software Engineering techniques.</p>
 				</div>
 			</div>
+		</div>
+		<div class="grid grid-cols-2 p-4 gap-4">
+			<PhotoViewport title="Nature Shots" photos={PhotosNature} />
+			<PhotoViewport title="Sports Shots" photos={PhotosSports} />
 		</div>
 	</div>
 </Layout>
