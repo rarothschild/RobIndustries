@@ -1,0 +1,23 @@
+---
+export interface Props {
+	currentPath: string;
+	link: string;
+    text: string;
+}
+
+const { currentPath, link, text } = Astro.props;
+const linkText = link.slice(1); // remove the first "/"
+
+---
+<a href={link}
+    class="grid place-items-center text-center h-12 px-2 w-28 text-xl font-bold bg-[#b8b968] hover:bg-[#5e79b3] hover:text-[#dadada] border border-black" >                          
+    {text}
+</a>
+
+<!-- More reacative button - needs pathfinding
+<a href={link}  
+    class={currentPath === linkText ? "text-center px-4 py-2 h-20 w-36 text-md font-bold bg-cyan-400 text-black hover:bg-cyan-400 hover:text-gray-800 border border-black" :
+                                    "text-center px-4 py-2 h-16 w-36 text-md font-bold bg-cyan-200 hover:bg-cyan-400 hover:text-gray-800 border border-black"}>
+    {text}
+</a>
+--->
