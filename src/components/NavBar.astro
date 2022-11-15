@@ -1,0 +1,18 @@
+---
+import myPic from '../images/me/RobPicMain.jpg';
+import NavButton from './NavButton.astro';
+
+const pathname = new URL(Astro.request.url).pathname;
+const currentPath = pathname.slice(1); // remove the first "/"
+---
+
+<nav class="border-b-2  border-black" aria-label="main navigation">
+      <div class="py-2 pl-32 flex flex-row gap-2 bg-[#30265f]">
+        <NavButton currentPath={currentPath} link="/" text="Home" />
+        <NavButton currentPath={currentPath} link="/ProjectsWebDev" text="Projects" />
+        <NavButton currentPath={currentPath} link="/Resume" text="Resume" />
+      </div>
+      <div class="navbar-end">
+          <!-- navbar items -->
+      </div>
+</nav>

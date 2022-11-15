@@ -1,24 +1,23 @@
 ---
+import { Image } from '@astrojs/image/components';
 // Component Imports
-import Button from '../components/Button.astro';
+import Layout from '../layouts/Layout.astro';
+import MainPic from '../images/me/Main.jpg'
 
-// Full Astro Component Syntax:
-// https://docs.astro.build/core-concepts/astro-components/
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro + TailwindCSS</title>
-	</head>
-
-	<body>
-		<div class="grid place-items-center h-screen content-center">
-			<Button>Tailwind Button in Astro!</Button>
-			<a href="/RobIndustires/markdown-page" class="p-4 underline">Markdown is also supported...</a>
+<Layout title="Home">
+	<div class="flex flex-col gap-2 items-center max-w-5xl mx-auto">
+		<div class="flex flex-col p-4 gap-4 text-center font-medium">
+			<div class="flex flex-row items-center gap-4 pt-10">
+				<Image src={MainPic} alt="Main Photo" height={250} />
+				<div class="grid gap-4 max-w-xl">
+					<p>Currently residing in Bellingham WA, I'm an Engineer and Developer.
+						Take a peek at some photography down below for some recent adventures.</p>
+					<p>I went to school at Fort Lewis in Durango CO for Engineering, worked as an Aerospace Engineer at The Heliospace Corporation, 
+						and am currently teaching myself Web Development in conjunction with other Software Engineering techniques.</p>
+				</div>
+			</div>
 		</div>
-	</body>
-</html>
+	</div>
+</Layout>

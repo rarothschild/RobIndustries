@@ -1,0 +1,47 @@
+---
+import HeaderLink from './HeaderLink.astro';
+import NavBar from './NavBar.astro';
+
+---
+
+<style>
+    .columns:not(:last-child) {margin-bottom: 0;}
+    .column {margin-top: auto;}
+    #name {
+        font-size: var(--font-size-xl);
+        font-weight: bolder;
+        text-align: center;
+        color: hsl(0, 3%, 30%);
+    }
+    #contactInfo {
+        text-align: center;
+    }
+</style>
+
+<div class="flex flex-row justify-between py-4 px-8 bg-[#2d183b]">
+    <div class="flex flex-row items-end">
+        <h1 class="text-6xl font-extrabold text-[#aaa]">Rob Rothschild</h1>
+    </div>
+    <div class="flex flex-col font-bold items-center p-2 bg-[#609faf]" id="contactInfo">
+        <p>Contact Info:</p>
+        <p>rarothsc@gmail.com</p>
+        <div class="flex gap-4">
+            <a href="https://github.com/rarothschild" class="button is-small is-github">
+                <span class="icon">
+                <i class="fab fa-github fa-lg"></i>
+                </span>
+            </a>
+            <a href="https://www.linkedin.com/in/robert-rothschild-33605aa6" class="button is-small is-linkedin">
+                <span class="icon">
+                <i class="fab fa-linkedin fa-lg"></i>
+                </span>
+            </a>
+            <a href="https://www.instagram.com/rothschild.robert/" class="button is-small is-instagram">
+                <span class="icon">
+                <i class="fab fa-instagram fa-lg"></i>
+                </span>
+            </a>
+        </div>
+    </div>
+</div>
+
