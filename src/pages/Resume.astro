@@ -1,12 +1,14 @@
 ---
+import { Image } from '@astrojs/image/components';
 import Layout from '../layouts/Layout.astro';
+
+import resume from '../images/RobResume_11-15-2022.png'
+
 ---
 
 
 <Layout title="Resume">
 	<div class="flex p-2 mx-auto">
-        <div class="resume">
-            <embed src="https://rarothschild.github.io/RobIndustries/Rothschild_Resume.pdf" width="900px" height="810px" />
-        </div>
+        <Image src={resume} alt="Resume" />
     </div>
 </Layout>
