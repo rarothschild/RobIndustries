@@ -9,5 +9,8 @@ import image from "@astrojs/image";
 export default defineConfig({
   site: 'https://rarothschild.github.io',
   base: '/RobIndustries',
-  integrations: [mdx(), tailwind(), image()]
+  integrations: [mdx(), tailwind(), image()],
+  markdown: {
+    drafts: true,
+  },
 });

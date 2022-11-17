@@ -1,0 +1,16 @@
+---
+import { Image, Picture} from '@astrojs/image/components';
+
+const { project } = Astro.props;
+console.log(project.frontmatter.image)
+---
+
+<article class="shadow-lg bg-[#dddca6]">
+    <div class="flex flex-col max-w-md">
+        <img src={project.frontmatter.image} alt="" height={200} />
+    </div>
+    <div>
+        <h1 class="font-bold">{project.frontmatter.title}</h1>
+        <p>{project.rawContent()}</p>
+    </div>
+</article>
