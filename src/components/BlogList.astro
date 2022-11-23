@@ -1,0 +1,15 @@
+---
+import PostPreview from "./PostPreview.astro";
+
+const posts = (await Astro.glob('../pages/blogs/*.{md,mdx}')).sort(
+	(a, b) => new Date(b.frontmatter.pubDate).valueOf() - new Date(a.frontmatter.pubDate).valueOf()
+);
+
+---
+
+<div class="grid text-center text-xl font-bold w-full p-2 bg-black text-white"><p>Blog Posts</p></div>
+<div class="grid gap-2 h-80  overflow-y-scroll bg-gray-300">
+    <ul>
+        { posts.map((post) => (<PostPreview post={post} />)) }
+    </ul>
+</div>

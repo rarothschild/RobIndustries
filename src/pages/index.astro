@@ -1,43 +1,38 @@
 ---
 import { Image } from '@astrojs/image/components';
+import BlogList from '../components/BlogList.astro';
 // Component Imports
 import Layout from '../layouts/Layout.astro';
-import PhotoViewport from '../components/PhotoViewport.astro';
 
-import MainPic from '../images/me/Main.jpg'
-
-import nature1 from '../images/Nature/PXL_20220920_215946391.jpg';
-import nature2 from '../images/Nature/PXL_20221016_010801721.jpg';
-import nature3 from '../images/Nature/PXL_20221018_181309738.jpg';
-import nature4 from '../images/Nature/PXL_20221029_203935610.jpg';
-import nature5 from '../images/Nature/PXL_20221029_221136208.jpg';
-
-import sports2 from '../images/Sports/PXL_20220306_200708888.jpg';
-import sports3 from '../images/Sports/PXL_20220601_040603592~2.jpg';
-import sports4 from '../images/Sports/PXL_20220730_000021384.jpg';
-import sports5 from '../images/Sports/PXL_20220803_161524688.jpg';
-
-
-const PhotosNature = [nature1,nature2,nature3,nature4,nature5];
-const PhotosSports = [sports2,sports3,sports4,sports5];
+const Photos = await Astro.glob('../images/MainPage/*.jpg')
+const minH = Math.min(...(Photos.map(photo => photo.default.height)))
 ---
 
 <Layout title="Home">
-	<div class="flex flex-col gap-2 items-center max-w-5xl mx-auto">
-		<div class="flex flex-col p-4 gap-4 text-center font-medium">
-			<div class="flex flex-row items-center gap-4 pt-10">
-				<Image src={MainPic} alt="Main Photo" height={250} />
-				<div class="grid gap-4 max-w-xl">
-					<p>Currently residing in Bellingham WA, I'm an Engineer and Developer.
-						Take a peek at some photography down below for some recent adventures.</p>
-					<p>I went to school at Fort Lewis in Durango CO for Engineering, worked as an Aerospace Engineer at The Heliospace Corporation, 
-						and am currently teaching myself Web Development in conjunction with other Software Engineering techniques.</p>
-				</div>
+	<div class="flex flex-row px-4 pt-2 gap-2 my-auto">
+		<div class="flex flex-col gap-4 text-center max-w-xl pt-4">
+			<div class="font-extrabold text-3xl">
+				<p>Welcome to my website</p>
+			</div>
+			<div class="grid gap-4 font-bold text-lg">
+				<p>I went to school at Fort Lewis in Durango CO where I recived my B.S. in Engineering. After that I worked as an Aerospace Engineer at The Heliospace Corporation, 
+					for five years, and am now currently teaching myself Web Development.</p>
+				<p>Originally from Colorado, I'm currently residing in Bellingham WA, exploring and experienceing the Pacific North West.</p>
 			</div>
 		</div>
-		<div class="grid grid-cols-2 p-4 gap-4">
-			<PhotoViewport title="Nature Shots" photos={PhotosNature} />
-			<PhotoViewport title="Sports Shots" photos={PhotosSports} />
+		<div class="w-full">
+			<div class="swiffy-slider slider-item-reveal slider-nav-caretfill slider-nav-visible slider-indicators-square">
+				<ul class="slider-container">
+					{Photos.map(photo => <li class="slide-visible p-2"><div id="slide1"><Image alt="" src={photo.default} height={minH} /></div></li> )}
+				</ul>
+				<button type="button" class="slider-nav"></button>
+				<button type="button" class="slider-nav slider-nav-next"></button>
+			</div>
+		</div>
+	</div>
+	<div class="grid justify-items-center p-4 my-auto">
+		<div class="max-w-4xl" >
+			<BlogList />
 		</div>
 	</div>
 </Layout>

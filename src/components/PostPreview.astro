@@ -1,0 +1,28 @@
+---
+import { Image } from '@astrojs/image/components';
+import { getCategoryColour } from "../utilities";
+
+	const allPosts = await Astro.glob('../pages/post/*.md');
+	const sortedPosts = allPosts.filter(f=> f.frontmatter.draft != true).sort((a, b) => new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf());
+	rconsole.log(sortedPosts)
+
+const { post } = Astro.props;
+console.log(post.frontmatter.categories)
+---
+
+<li class="flex flex-row m-2 shadow-md bg-white">
+    <div class="overflow-hidden">
+        <Image src={post.frontmatter.image} alt="" format="jpeg" height={200} width={200} />    
+    </div>
+    <div class="basis-5/6 p-2">
+        <div class="font-bold text-lg">
+            <a href={post.url}>{post.frontmatter.title}</a>
+        </div>
+        <div>
+            <p>{post.frontmatter.description}</p>
+        </div>
+        <div class="justify-start space-x-2">
+            {post.frontmatter.categories.map((category: string) =><a href={`../category/${category}`} class={`${getCategoryColour(category)}`}>{category}</a>)}
+        </div>
+    </div>
+</li>
