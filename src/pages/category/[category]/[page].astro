@@ -9,29 +9,22 @@ export async function getStaticPaths({ paginate }) {
         .filter((f) => f.frontmatter.categories != undefined)
         .map((p) => p.frontmatter.categories);
     let allCategoriesUnique = [...new Set(allCategories.flat())];
+    console.log(allCategoriesUnique)
     return allCategoriesUnique.map((category) => {
         const filteredPosts = allPosts.filter((post) => 
             post.frontmatter.categories.includes(category) && post.frontmatter.draft != true
-            );
+        );
         return paginate(filteredPosts, {
-        params: { category },
-        pageSize: Config.pageSize,
+            params: { category },
+        });
     });
-  });
 }
 
-const allPosts = await Astro.glob("../../blog/*.md");
-let allCategories = allPosts
-    .filter((f) => f.frontmatter.categories != undefined)
-    .map((p) => p.frontmatter.categories);
-let allCategoriesUnique = [...new Set(allCategories.flat())];
-
-console.log(allCategoriesUnique)
 const { page } = Astro.props;
 const { params } = Astro;
 ---
 
-<Layout title={params.category}>
+<Layout title="test">
     <p class="text-right">{page.total} {Config.i18n.resultFound}</p>
     <div class="overflow-x-auto w-full">
         <table class="table-normal w-full">
