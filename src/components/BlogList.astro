@@ -1,7 +1,7 @@
 ---
 import PostPreview from "./PostPreview.astro";
 
-const posts = (await Astro.glob('/RobIndustries/src/pages/blogs/*.{md,mdx}')).sort(
+const posts = (await Astro.glob('/src/pages/blogs/*.{md,mdx}')).sort(
 	(a, b) => new Date(b.frontmatter.pubDate).valueOf() - new Date(a.frontmatter.pubDate).valueOf()
 );
 
