@@ -6,19 +6,20 @@ const { post } = Astro.props;
 console.log(post.frontmatter.categories)
 ---
 
-<li class="flex flex-row m-2 shadow-md bg-slate-200">
-    <div class="overflow-hidden">
+<li class="flex flex-row m-2 shadow-md bg-slate-200 border border-black">
+    <div class="sm:hidden md:block">
         <Image src={post.frontmatter.image} alt="" format="jpeg" height={200} width={200} />    
     </div>
-    <div class="basis-5/6 p-2 grid justify-between">
-        <div class="font-bold text-lg">
-            <a href={post.url}>{post.frontmatter.title}</a>
-        </div>
-        <div>
+    <div class="basis-5/6 p-2 flex flex-col justify-between">
+        <div class="">
+            <a class="font-bold text-lg" href={post.url}>{post.frontmatter.title}</a>
             <p>{post.frontmatter.description}</p>
         </div>
-        <div class="justify-start space-x-2">
-            {post.frontmatter.categories.map((category: string) =><a href={`../category/${category}`} class={`${getCategoryColour(category)}`}>{category}</a>)}
+        <div class="flex flex-row gap-2 p-2 overflow-x-clip">
+            {post.frontmatter.categories.map((category: string) =>
+            <a class="font-bold rounded bg-amber-200 p-1 border border-black" href={`../category/${category}`} class={`${getCategoryColour(category)}`}>
+                {category}
+            </a>)}
         </div>
     </div>
 </li>

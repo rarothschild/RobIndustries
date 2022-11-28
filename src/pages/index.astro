@@ -11,19 +11,19 @@ const minH = Math.min(...(Photos.map(photo => photo.default.height)))
 
 <Layout title="Home">
 	<div class="flex flex-col">
-		<div class="flex flex-row p-4 gap-4 bg-slate-300">
-			<div class="basis-1/2 flex flex-col gap-4 text-center max-w-lg">
-				<div class="font-extrabold text-3xl">
+		<div class="grid grid-cols-1 md:grid-cols-2 p-4 gap-4 place-items-center bg-slate-300">
+			<div class="flex flex-col gap-4 text-center max-w-lg">
+				<div class="font-extrabold text-2xl">
 					<p>Welcome</p>
 				</div>
-				<div class="grid gap-4 font-bold text-lg">
+				<div class="grid gap-4 font-bold text-md">
 					<p>This site is a personal porfolio and catalogue of my projects.</p>
 					<p>I went to school at Fort Lewis in Durango CO where I recived my B.S. in Engineering. After that I worked as an Aerospace Engineer at The Heliospace Corporation 
 						for five years, and am now currently teaching myself Web Development.</p>
 					<p>Originally from Colorado, I'm currently residing in Bellingham WA, exploring and experienceing the Pacific North West.</p>
 				</div>
 			</div>
-			<div class="basis-1/2 w-full mx-auto">
+			<div class="">
 				<div class="swiffy-slider slider-item-reveal slider-nav-caretfill slider-nav-visible slider-indicators-square">
 					<ul class="slider-container">
 						{Photos.map(photo => <li class="slide-visible p-2"><div id="slide1"><Image class="shadow-md" alt="" src={photo.default} height={minH} /></div></li> )}
@@ -33,7 +33,7 @@ const minH = Math.min(...(Photos.map(photo => photo.default.height)))
 				</div>
 			</div>
 		</div>
-		<div class="grid grid-cols-2 p-4 gap-2 bg-indigo-400">
+		<div class="grid grid-cols-1 md:grid-cols-2 p-4 gap-2 bg-blue-400">
 				<BlogList />
 				<ProjectList />
 		</div>
