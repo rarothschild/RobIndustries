@@ -21,26 +21,28 @@ import MainPic from '../images/me/Main.jpg'
     }
 </style>
 
-<div class="flex flex-row place-items-end bg-[#353038] border-b-stone-500 border-b-8">
-    <div class="hidden md:block w-52 mr-2">
-        <Image src={MainPic} alt="Main Photo" height={150} />
+<div class="py-4 flex flex-row place-items-center justify-between bg-[#221f24]">
+    <div class="ml-8  basis-2/3 w-full pb-1 text-[#d3cece] text-center">
+        <a href="/RobIndustries/" class=" text-6xl md:text-6xl font-extrabold ">Rob Rothschild</a>
+        <h2 class="font-bold text-xl" >Engineer - Developer - Adventurer</h2>
     </div>
-    <div class="w-full pb-1"><a href="/RobIndustries/" class="text-6xl md:text-7xl font-extrabold text-[#d3cece]">Rob Rothschild</a></div>
-    <div class="grid items-end " id="contactInfo">
-        <div class="flex flex-col font-bold text-lg p-2 m-2 border-2 border-black bg-[#9db170]">
-            <p>Contact Info:</p>
-            <p>rarothsc@gmail.com</p>
-            <div class="flex flex-row justify-center gap-4">
+    <div class="flex flex-row p-2 mr-8 items-center border-2 border-black bg-[#9db170]">
+        <div class="flex flex-col px-6 font-bold text-lg ">
+            <p class="underline font-extrabold text-text-center">Find me on:</p>
+            <div class="flex flex-col gap-1">
                 <a href="https://github.com/rarothschild" class="button is-small is-github">
-                    <span class="icon"><i class="fab fa-github fa-lg"></i></span>
+                    <span class="w-full icon"><i class="pr-2 fab fa-github fa-lg"></i>Github</span>
                 </a>
                 <a href="https://www.linkedin.com/in/robert-rothschild-33605aa6" class="button is-small is-linkedin">
-                    <span class="icon"><i class="fab fa-linkedin fa-lg"></i></span>
+                    <span class="icon"><i class="pr-2 fab fa-linkedin fa-lg"></i>Linkedin</span>
                 </a>
                 <a href="https://www.instagram.com/rothschild.robert/" class="button is-small is-instagram">
-                    <span class="icon"><i class="fab fa-instagram fa-lg"></i></span>
+                    <span class="icon"><i class="pr-2 fab fa-instagram fa-lg"></i>Instagram</span>
                 </a>
             </div>
+        </div>
+        <div class="hidden md:block">
+            <Image src={MainPic} alt="Main Photo" height={125} />
         </div>
     </div>
 </div>

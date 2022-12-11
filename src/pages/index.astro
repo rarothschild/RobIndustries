@@ -1,41 +1,66 @@
 ---
 import { Image } from '@astrojs/image/components';
-import BlogList from '../components/BlogList.astro';
+
+import BlogList from '../components/BlogList.jsx';
 import ProjectList from '../components/ProjectList.astro';
-// Component Imports
 import Layout from '../layouts/Layout.astro';
+import Counter from '../components/Counter';
+
+import logo1 from './src/images/logos/logoPython.png'
+import logo2 from './src/images/logos/logoMatlab.png'
+import logo3 from './src/images/logos/logoJS.png'
+import logo4 from './src/images/logos/logoHtml.png'
+import logo5 from './src/images/logos/logoCss.png'
+import logo6 from './src/images/logos/logoDjango.jpeg'
+import logo7 from './src/images/logos/logoGCP.png'
+import logo8 from './src/images/logos/logoLatex.png'
+import Test from '../components/Test.astro';
+const logos = [logo1,logo2,logo3,logo4,logo5,logo6,logo7,logo8]
 
 const Photos = await Astro.glob('../images/MainPage/*.jpg')
 const minH = Math.min(...(Photos.map(photo => photo.default.height)))
+const posts = (await Astro.glob('/src/pages/blogs/*.{md,mdx}')).sort(
+	(a, b) => new Date(b.frontmatter.pubDate).valueOf() - new Date(a.frontmatter.pubDate).valueOf()
+);
+
+
 ---
 
+
 <Layout title="Home">
-	<div class="flex flex-col">
-		<div class="grid grid-cols-1 md:grid-cols-2 p-4 gap-4 place-items-center bg-slate-300">
-			<div class="flex flex-col gap-4 text-center max-w-lg">
-				<div class="font-extrabold text-2xl">
-					<p>Welcome</p>
+	<div class="flex flex-col ">
+		<div class="grid grid-cols-1 md:grid-cols-2 bg-slate-300 border-b border-black">
+			<div class="flex flex-col justify-center border-r border-black">
+				<div class="text-center font-extrabold text-3xl bg-[#353038]">
+					<p class="p-4 pt-6 text-[#d3cece]">Welcome to my Site</p>
 				</div>
-				<div class="grid gap-4 font-bold text-md">
+				<div class="h-4 bg-gradient-to-b from-[#353038] to-slate-300"></div>
+				<div class="grid gap-2 p-4 font-bold text-md">
 					<p>This site is a personal porfolio and catalogue of my projects.</p>
-					<p>I went to school at Fort Lewis in Durango CO where I recived my B.S. in Engineering. After that I worked as an Aerospace Engineer at The Heliospace Corporation 
+					<p>Current resident of Bellingham WA, I went to school at Fort Lewis in Durango CO where I recived my B.S. in Engineering. After that I worked as an Aerospace Engineer at The Heliospace Corporation 
 						for five years, and am now currently teaching myself Web Development.</p>
 					<p>Originally from Colorado, I'm currently residing in Bellingham WA, exploring and experienceing the Pacific North West.</p>
 				</div>
+				<div class="grid items-center pb-6 bg-slate-300">
+					<div class=" px-4 place-self-center bg-slate-400 border-black border-t-2 border-x-2 shadow-[-10px_10px_0px_0px_rgba(0,0,0,0.3)]"><h2 class="font-bold text-xl">My Toolbox</h2></div>
+					<div class="flex flex-row gap-2 p-2 w-[28rem]  overflow-x-scroll scrollbar mx-auto border-2 shadow-[-10px_10px_0px_0px_rgba(0,0,0,0.3)] border-black bg-slate-400">
+						{logos.map(logo => <Image src={logo} alt="Tool logo" height="60"/>)}
+					</div>
+				</div>
 			</div>
-			<div class="">
+			<div class="grid items-center bg-slate-500 px-2 border-t border-black shadow-inner">
 				<div class="swiffy-slider slider-item-reveal slider-nav-caretfill slider-nav-visible slider-indicators-square">
 					<ul class="slider-container">
-						{Photos.map(photo => <li class="slide-visible p-2"><div id="slide1"><Image class="shadow-md" alt="" src={photo.default} height={minH} /></div></li> )}
+						{Photos.map(photo => 
+							<li class="slide-visible">
+								<div><Image alt="" src={photo.default} height={minH} /></div>
+							</li> )}
 					</ul>
 					<button type="button" class="slider-nav"></button>
 					<button type="button" class="slider-nav slider-nav-next"></button>
 				</div>
 			</div>
-		</div>
-		<div class="grid grid-cols-1 md:grid-cols-2 p-4 gap-2 bg-blue-400">
-				<BlogList />
-				<ProjectList />
+			<Test />
 		</div>
 	</div>
 </Layout>
