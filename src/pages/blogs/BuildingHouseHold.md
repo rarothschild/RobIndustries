@@ -8,7 +8,6 @@ pubDate: "2022-10-22"
 updatedDate: ""
 categories:
   - Solid
-  - Astro
   - Tailwind
   - Vite
   - Django 

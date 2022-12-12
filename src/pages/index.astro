@@ -21,9 +21,9 @@ const posts = (await Astro.glob('/src/pages/blogs/*.{md,mdx}')).sort(
 );
 ---
 
-<Layout title="Home">
-	<div class="flex flex-col p-4 pt-8 gap-9 bg-[#353038]">
-		<div class="grid grid-cols-1 md:grid-cols-2 ">
+<Layout title="Rob Rothschild">
+	<div class="flex flex-col p-4 pt-7 gap-9 bg-[#353038]">
+		<div class="px-2 grid grid-cols-1 md:grid-cols-2 gap-4 ">
 			<div class="flex flex-col gap-4 justify-center">
 				<div class="text-center font-extrabold text-3xl">
 					<p class=" text-[#d3cece]">Welcome to my Portfolio Site</p>
@@ -40,7 +40,7 @@ const posts = (await Astro.glob('/src/pages/blogs/*.{md,mdx}')).sort(
 					</div>
 				</div>
 			</div>
-			<div class="grid items-center px-2 shadow-inner">
+			<div class="grid items-center shadow-inner">
 				<div class="swiffy-slider slider-item-reveal slider-nav-caretfill slider-nav-visible slider-indicators-square">
 					<ul class="slider-container">
 						{Photos.map(photo => 

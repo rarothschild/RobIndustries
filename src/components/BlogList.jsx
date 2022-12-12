@@ -33,7 +33,7 @@ export default function BlogList(props) {
     
     function PostPreview(post) {
         return (
-            <a href={post.url} class="flex flex-col w-72 mb-2 shadow-[-10px_10px_0px_0px_rgba(0,0,0,0.3)] bg-[#e9e4de]  border-2 border-black">
+            <a href={post.url} class="flex flex-col w-72 mb-2 shadow-[-10px_10px_0px_0px_rgba(0,0,0,0.3)] bg-slate-200  border-2 border-black">
                 <div class="bg-slate-800 border-b border-black">
                     <img class="object-contain h-52 w-72 mx-auto" src={post.frontmatter.image} alt="Tool logo" />
                 </div>
