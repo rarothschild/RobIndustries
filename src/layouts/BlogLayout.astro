@@ -20,17 +20,20 @@ const {
 ---
 
 <Layout title="Blog">
-    <div class="flex flex-col px-8 h-full items-center mx-auto max-w-3xl">
-        <div class="py-8">
-            {image && <Image height={250} aspectRatio="16:9" format="jpeg" src={image} alt="" />}
-        </div>
-        <div class="pb-8 text-center text-[#d3cece]">
-            <h1 class="font-extrabold text-3xl">{title}</h1>
-            { pubDate && <h2 class="font-bold text-xl">{pubDate}</h2> }
-            { updatedDate && (<div>Last updated on <time>{updatedDate}</time></div>)}
-        </div>
-        <div class="grid gap-4 pb-8 font-medium  text-[#d3cece]">
-            <slot />
+    <div class="relative flex flex-row">
+        <a href="../../" class="absolute place-self-start p-3 px-6 top-2 left-2 bg-[#c0c0c0] font-bold text-xl border-2 border-black">Back to Home</a>
+        <div class="flex flex-col px-8 h-full items-center mx-auto max-w-3xl">
+            <div class="py-8">
+                {image && <Image height={250} aspectRatio="16:9" format="jpeg" src={image} alt="" />}
+            </div>
+            <div class="pb-8 text-center text-[#d3cece]">
+                <h1 class="font-extrabold text-3xl">{title}</h1>
+                { pubDate && <h2 class="font-bold text-xl">{pubDate}</h2> }
+                { updatedDate && (<div>Last updated on <time>{updatedDate}</time></div>)}
+            </div>
+            <div class="grid gap-4 pb-8 font-medium  text-[#d3cece]">
+                <slot />
+            </div>
         </div>
     </div>
 </Layout>
