@@ -22,32 +22,30 @@ const posts = (await Astro.glob('/src/pages/blogs/*.{md,mdx}')).sort(
 ---
 
 <Layout title="Home">
-	<div class="flex flex-col ">
-		<div class="grid grid-cols-1 md:grid-cols-2 bg-slate-300 border-b border-black">
-			<div class="flex flex-col justify-center border-r border-black">
-				<div class="text-center font-extrabold text-3xl bg-[#353038]">
-					<p class="p-4 pt-6 text-[#d3cece]">Welcome to my Site</p>
+	<div class="flex flex-col p-4 pt-8 gap-9 bg-[#353038]">
+		<div class="grid grid-cols-1 md:grid-cols-2 ">
+			<div class="flex flex-col gap-4 justify-center">
+				<div class="text-center font-extrabold text-3xl">
+					<p class=" text-[#d3cece]">Welcome to my Portfolio Site</p>
 				</div>
-				<div class="h-4 bg-gradient-to-b from-[#353038] to-slate-300"></div>
-				<div class="grid gap-2 p-4 font-bold text-md">
-					<p>This site is a personal porfolio and catalogue of my projects.</p>
-					<p>Current resident of Bellingham WA, I went to school at Fort Lewis in Durango CO where I recived my B.S. in Engineering. After that I worked as an Aerospace Engineer at The Heliospace Corporation 
-						for five years, and am now currently teaching myself Web Development.</p>
-					<p>Originally from Colorado, I'm currently residing in Bellingham WA, exploring and experienceing the Pacific North West.</p>
+				<div class="grid gap-2 font-bold text-md text-[#d3cece]">
+					<p>I'm a lover of all things Aerospace, Robotics, and Software</p>
+					<p>Current resident of Bellingham WA, I'm teaching myself web development while exporing the PNW. I went to school at Fort Lewis in Durango CO where I recived my B.S. in Engineering. After that I worked as an Aerospace Engineer at The Heliospace Corporation 
+						for five years.</p>
 				</div>
-				<div class="grid items-center pb-6 bg-slate-300">
-					<div class=" px-4 place-self-center bg-slate-400 border-black border-t-2 border-x-2 shadow-[-10px_10px_0px_0px_rgba(0,0,0,0.3)]"><h2 class="font-bold text-xl">My Toolbox</h2></div>
+				<div class="grid items-center pb-6">
+					<div class=" px-4 place-self-center border-x-2 border-t-2 border-black bg-slate-400 shadow-[-10px_10px_0px_0px_rgba(0,0,0,0.3)]"><h2 class="font-bold text-xl">My Toolbox</h2></div>
 					<div class="flex flex-row gap-2 p-2 w-[28rem]  overflow-x-scroll scrollbar mx-auto border-2 shadow-[-10px_10px_0px_0px_rgba(0,0,0,0.3)] border-black bg-slate-400">
 						{logos.map(logo => <Image src={logo} alt="Tool logo" height="60"/>)}
 					</div>
 				</div>
 			</div>
-			<div class="grid items-center bg-slate-500 px-2 border-t border-black shadow-inner">
+			<div class="grid items-center px-2 shadow-inner">
 				<div class="swiffy-slider slider-item-reveal slider-nav-caretfill slider-nav-visible slider-indicators-square">
 					<ul class="slider-container">
 						{Photos.map(photo => 
 							<li class="slide-visible">
-								<div><Image alt="" src={photo.default} height={minH} /></div>
+								<div><Image class="shadow-lg" alt="" src={photo.default} height={minH} /></div>
 							</li> )}
 					</ul>
 					<button type="button" class="slider-nav"></button>
