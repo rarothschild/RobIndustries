@@ -3,7 +3,7 @@ layout: "../../layouts/BlogLayout.astro"
 title: "Londonderry Quarry"
 link: "londonderryquarry.com"
 description: "The very first website I've built"
-image: "/RobIndustries/LondonderryQuarry.jpg"
+image: "/LondonderryQuarry.jpg"
 pubDate: "2022-11-01"
 updatedDate: "2022-11-22"
 categories:
