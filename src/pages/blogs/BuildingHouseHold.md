@@ -3,7 +3,7 @@ layout: "../../layouts/BlogLayout.astro"
 title: "Building House Hold"
 link: ""
 description: "The first full stack site I've worked on"
-image: "./src/images/BlogThumbs/HouseHold.jpg"
+image: "/RobIndustries/HouseHold.jpg"
 pubDate: "2022-10-22"
 updatedDate: ""
 categories:
