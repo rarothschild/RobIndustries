@@ -3,13 +3,15 @@ layout: "../../layouts/BlogLayout.astro"
 title: "Building House Hold"
 link: ""
 description: "The first full stack site I've worked on"
-image: "../images/BlogThumbs/HouseHold.jpg"
-pubDate: "2022-11-22"
+image: "./src/images/BlogThumbs/HouseHold.jpg"
+pubDate: "2022-10-22"
 updatedDate: ""
 categories:
   - Solid
   - Astro
   - Tailwind
+  - Vite
+  - Django 
 ---
 
 The concept of the site was to have a place where roommates and landlords can communicate about expenses, stay informed about any maintenance, and keep documentation in an organized place. I've had good and bad living situations, and the bad typically happen due to renting from a property management company. The times I've rented under these I found there to be little to no human interaction, and minimal accountability. I'd like to give renters and small landlords a leg up by providing an interface for them to make record keeping and coordination simpler.

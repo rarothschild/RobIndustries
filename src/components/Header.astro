@@ -1,25 +1,8 @@
 ---
 import { Image } from '@astrojs/image/components';
 
-import HeaderLink from './HeaderLink.astro';
-import NavBar from './NavBar.astro';
-
 import MainPic from '../images/me/Main.jpg'
 ---
-
-<style>
-    .columns:not(:last-child) {margin-bottom: 0;}
-    .column {margin-top: auto;}
-    #name {
-        font-size: var(--font-size-xl);
-        font-weight: bolder;
-        text-align: center;
-        color: hsl(0, 3%, 30%);
-    }
-    #contactInfo {
-        text-align: center;
-    }
-</style>
 
 <div class="py-4 flex flex-row place-items-center justify-between bg-[#221f24]">
     <div class="ml-8  basis-2/3 w-full pb-1 text-[#d3cece] text-center">
