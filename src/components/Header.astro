@@ -4,24 +4,34 @@ import { Image } from '@astrojs/image/components';
 import MainPic from '../images/me/Main.jpg'
 ---
 
-<div class="py-4 flex flex-row place-items-center justify-between bg-[#221f24]">
-    <div class="ml-8  basis-2/3 w-full pb-1 text-[#d3cece] text-center">
+<div class="py-4 flex flex-col md:flex-row place-items-center justify-between bg-[#221f24]">
+    <div class=" basis-2/3 w-full pb-1 text-[#d3cece] text-center">
         <a href="../../" class=" text-6xl md:text-6xl font-extrabold ">Rob Rothschild</a>
         <h2 class="font-bold text-xl" >Engineer - Developer - Adventurer</h2>
     </div>
-    <div class="p-2 mr-8 items-center text-[#d3cece]">
-        <div class="flex flex-col px-6 font-bold text-lg gap-1">
-            <p class="underline font-extrabold text-text-center">Find me on:</p>
-            <div class="w-32 flex flex-col gap-1">
-                <a href="https://github.com/rarothschild" class="button is-small is-github">
-                    <span class="icon"><i class="pr-2 fab fa-github fa-lg"></i>Github</span>
-                </a>
-                <a href="https://www.linkedin.com/in/robert-rothschild-33605aa6" class="button is-small is-linkedin">
-                    <span class="icon"><i class="pr-2 fab fa-linkedin fa-lg"></i>Linkedin</span>
-                </a>
-                <a href="https://www.instagram.com/rothschild.robert/" class="button is-small is-instagram">
-                    <span class="icon"><i class="pr-2 fab fa-instagram fa-lg"></i>Instagram</span>
-                </a>
+    <div class="flex flex-row p-2 items-center text-[#d3cece]">
+        <div class=" px-6 font-bold text-lg gap-1">
+            <p class="underline font-extrabold text-center">Find me on:</p>
+            <div class="flex flex-row justify-between md:flex-col gap-4 md:gap-1
+            md:justify-items-start">
+                <div class="flex">
+                    <a href="https://github.com/rarothschild" class="button is-small is-github">
+                        <span class="icon"><i class="pr-2 fab fa-github fa-lg"></i></span>
+                    </a>
+                    <p>Github</p>
+                </div>
+                <div class="flex">
+                    <a href="https://www.linkedin.com/in/robert-rothschild-33605aa6" class="button is-small is-linkedin">
+                        <span class="icon"><i class="pr-2 fab fa-linkedin fa-lg"></i></span>
+                    </a>
+                    <p>Linkedin</p>
+                </div>
+                <div class="flex">
+                    <a href="https://www.instagram.com/rothschild.robert/" class="button is-small is-instagram">
+                        <span class="icon"><i class="pr-2 fab fa-instagram fa-lg"></i></span>
+                    </a>
+                    <p>Instagram</p>
+                </div>
             </div>
         </div>
         <div class="hidden lg:block">
