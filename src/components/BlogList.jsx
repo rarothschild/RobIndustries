@@ -55,8 +55,8 @@ export default function BlogList(props) {
     }
 
     return(
-        <div class="flex flex-row overflow-hidden">
-            <div class="mt-8 flex flex-col p-4 gap-8">
+        <div class="flex flex-col md:flex-row overflow-hidden">
+            <div class="mt-8 flex flex-col p-4 gap-8 ">
                 <h2 class="text-center text-3xl font-extrabold text-[#d3cece]">Blog Posts</h2>
                 <div class="flex flex-col w-64 p-2 font-bold gap-2 ">
                     <div class="justify-between text-center">
@@ -70,7 +70,7 @@ export default function BlogList(props) {
                     </div>
                 </div>
             </div>
-            <div class="flex flex-row gap-6">
+            <div class="flex flex-row gap-6 ">
                 {showBlogs().map(blog => PostPreview(blog))}
             </div>
         </div>
