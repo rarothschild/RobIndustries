@@ -22,13 +22,13 @@ const posts = (await Astro.glob('/src/pages/blogs/*.{md,mdx}')).sort(
 ---
 
 <Layout title="Rob Rothschild">
-	<div class="flex flex-col  p-4 pt-7 gap-9 bg-[#353038]">
+	<div class="flex flex-col  p-4 pt-7 gap-9 bg-[color:var(--color-content)]">
 		<div class="px-2 grid grid-cols-1 lg:grid-cols-2 gap-4 place-items-center">
 			<div class="max-w-2xl flex flex-col gap-4 ">
 				<div class="text-center font-extrabold text-3xl">
-					<p class=" text-[#d3cece]">Welcome to my Portfolio Site</p>
+					<p>Welcome to my Portfolio Site</p>
 				</div>
-				<div class="grid gap-2 font-bold text-md text-[#d3cece]">
+				<div class="grid gap-2 font-bold text-md">
 					<p>I'm a lover of all things Aerospace, Robotics, and Software</p>
 					<p>Current resident of Bellingham WA, I'm teaching myself web development while exporing the PNW. I went to school at Fort Lewis in Durango CO where I recived my B.S. in Engineering. After that I worked as an Aerospace Engineer at The Heliospace Corporation 
 						for five years.</p>

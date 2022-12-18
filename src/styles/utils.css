@@ -3,16 +3,24 @@
 @tailwind utilities;
 
 :root {
-    --font-size-base: clamp(1rem, 0.34vw + 0.91rem, 1.19rem);
-    --font-size-lg: clamp(1.2rem, 0.7vw + 1.2rem, 1.5rem);
-    --font-size-xl: clamp(2.44rem, 2.38vw + 1.85rem, 3.75rem);
-    --color-text: hsl(12, 5%, 4%);
-    --color-bg: hsl(10, 21%, 95%);
-    --color-border: hsl(18, 42%, 60%);
+  --color-bg: #a0a4a7;
+  --color-header: #221f24;
+  --color-content: #6b6b69;
+  --color-text: #d3cece;
 }
 
-body {
-    background-color: rgb(187, 31, 31);
+[data-theme="light"] {
+  --color-bg: #ffffff;
+  --color-header: #afafaf;
+  --color-text: #363333;
+  --color-content: #d6d2d2;
+}
+
+[data-theme="dark"] {
+  --color-bg: #6b6b69;
+  --color-header: #221f24;
+  --color-text: #d3cece;
+  --color-content: #353038;
 }
 
 @layer utilities {
@@ -20,7 +28,6 @@ body {
     width: 15px;
     height: 10px;
   }
-
 
   .scrollbar::-webkit-scrollbar-track {
     border-radius: 100vh;
