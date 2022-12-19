@@ -3,10 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --color-bg: #a0a4a7;
-  --color-header: #221f24;
-  --color-content: #6b6b69;
-  --color-text: #d3cece;
+  transition: background-color 1s ease;
 }
 
 [data-theme="light"] {
@@ -25,11 +22,11 @@
 
 [data-theme="light"] #themePicker {
   transition: all 1s ease;
-  transform: translateX(-25%);
+  transform: translateX(-30%);
 }
 [data-theme="dark"] #themePicker {
   transition: all 1s ease;
-  transform: translateX(25%);
+  transform: translateX(27%);
 }
 
 @layer utilities {

@@ -21,20 +21,18 @@ export default function ThemeSwitcher() {
     }
 
     return (
-        <div class="grid justify-center overflow-hidden h-20 w-24 absolute bottom-0 bg-gray-300">
-            <svg onClick={()=>themeClick()} width="194" height="80" viewBox="0 0 194 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <div class="grid justify-center overflow-hidden w-14 absolute bottom-0 border border-black">
+            <svg onClick={()=>themeClick()} width="120" height="50" viewBox="0 0 120 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g id="themePicker">
-                <rect id="Rectangle 8" x="98" width="96" height="80" fill="#474545"/>
-                <ellipse id="Ellipse 2" opacity="0.5" cx="147" cy="40.5" rx="35" ry="34.5" fill="#D9D9D9"/>
-                <path id="Vector 1" d="M112.005 41.5214C111.481 6.5896 153.784 0.547793 146.287 10.0118C138.79 19.4758 135.388 57.8962 146.287 69.3438C157.186 80.7915 112.529 76.4532 112.005 41.5214Z" fill="#F5EC94" stroke="black" stroke-opacity="0.39"/>
-                <ellipse id="Ellipse 1" cx="48.5" cy="52" rx="19.5" ry="21" fill="#EDE763"/>
-                <rect id="Rectangle 1" width="5.90182" height="16.9988" transform="matrix(0.819152 -0.573576 0.532784 0.846251 22.9264 17.8842)" fill="#EDE763"/>
-                <rect id="Rectangle 4" width="5.90182" height="16.9988" transform="matrix(0.819152 0.573576 -0.532784 0.846251 69.779 14.3611)" fill="#EDE763"/>
-                <rect id="Rectangle 6" width="6.11522" height="16.3968" transform="matrix(0.32525 0.945628 -0.933177 0.359417 85.524 33.0246)" fill="#EDE763"/>
-                <rect id="Rectangle 7" width="6.11522" height="16.3968" transform="matrix(0.32525 -0.945628 0.933177 0.359417 10.2919 38.6559)" fill="#EDE763"/>
-                <rect id="Rectangle 3" x="45" y="8" width="7" height="18" fill="#EDE763"/>
-                <rect id="Rectangle 2" x="89" y="51" width="6" height="16" transform="rotate(90 89 51)" fill="#EDE763"/>
-                <rect id="Rectangle 5" x="24" y="51" width="6" height="16" transform="rotate(90 24 51)" fill="#EDE763"/>
+                <path id="Vector 1" d="M81.0026 25.6856C80.6542 5.43189 115.251 1.72092 103.79 7.41611C92.3294 13.1113 89.7638 35.3976 103.79 41.8171C117.817 48.2367 81.351 45.9392 81.0026 25.6856Z" fill="#5D5F61" stroke="#405377" stroke-opacity="0.39"/>
+                <circle id="Ellipse 1" cx="28" cy="25" r="10" fill="#F5E761" stroke="#405377" stroke-opacity="0.39"/>
+                <path id="Polygon 1" d="M28 6L31.4641 12.75H24.5359L28 6Z" fill="#F5E761" stroke="#405377" stroke-opacity="0.39"/>
+                <path id="Polygon 2" d="M43.409 13.4403L40.5569 20.3314L36.3845 14.3726L43.409 13.4403Z" fill="#F5E761" stroke="#405377" stroke-opacity="0.39"/>
+                <path id="Polygon 6" d="M46.1724 29.3517L39.1927 31.9795L40.6909 24.8611L46.1724 29.3517Z" fill="#F5E761" stroke="#405377" stroke-opacity="0.39"/>
+                <path id="Polygon 8" d="M36.2803 42.1463L30.3622 37.6079L37.1979 35.1199L36.2803 42.1463Z" fill="#F5E761" stroke="#405377" stroke-opacity="0.39"/>
+                <path id="Polygon 9" d="M20.9466 42.4854L19.3303 35.2047L26.166 37.6927L20.9466 42.4854Z" fill="#F5E761" stroke="#405377" stroke-opacity="0.39"/>
+                <path id="Polygon 5" d="M12.409 13.4403L19.4334 14.3726L15.261 20.3314L12.409 13.4403Z" fill="#F5E761" stroke="#405377" stroke-opacity="0.39"/>
+                <path id="Polygon 7" d="M9.95746 29.5182L15.3363 24.9051L16.9946 31.988L9.95746 29.5182Z" fill="#F5E761" stroke="#405377" stroke-opacity="0.39"/>
                 </g>
             </svg>
         </div>
