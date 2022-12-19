@@ -23,6 +23,15 @@
   --color-content: #353038;
 }
 
+[data-theme="light"] #themePicker {
+  transition: all 1s ease;
+  transform: translateX(-25%);
+}
+[data-theme="dark"] #themePicker {
+  transition: all 1s ease;
+  transform: translateX(25%);
+}
+
 @layer utilities {
   .scrollbar::-webkit-scrollbar {
     width: 15px;
