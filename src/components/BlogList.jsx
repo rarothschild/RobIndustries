@@ -33,7 +33,7 @@ export default function BlogList(props) {
     
     function PostPreview(post) {
         return (
-            <a href={post.url} class="flex flex-col w-72 mb-2 shadow-[-10px_10px_0px_0px_rgba(0,0,0,0.3)] bg-slate-200  border-2 border-black">
+            <a href={post.url} class="flex flex-col w-72 mb-2 shadow-[-10px_10px_0px_0px_rgba(0,0,0,0.3)] bg-slate-200  border-2 border-black text-black">
                 <div class="bg-slate-800 border-b border-black">
                     <img class="object-contain h-52 w-72 mx-auto" src={post.frontmatter.image} alt="Tool logo" />
                 </div>
@@ -42,7 +42,7 @@ export default function BlogList(props) {
                 <p class="p-2 h-full text-center font-medium text-lg">{post.frontmatter.description}</p>
                 <div class="flex flex-row flex-wrap gap-2 px-2 py-1 font-bold ">
                     {post.frontmatter.categories.map(cat => 
-                        <div class="rounded-md p-2 border-2 border-black" style={{"background-color": tagCoor[cat]}}>{cat}</div>)}
+                        <div class="rounded-md px-2 py-1 border-2 border-black" style={{"background-color": tagCoor[cat]}}>{cat}</div>)}
                 </div>
             </a>
         )
@@ -50,20 +50,20 @@ export default function BlogList(props) {
 
     function Tag(category) {
         return(
-            <button class="rounded-md px-2 py-1 border-2 border-black" style={{"background-color": tagCoor[category]}} onClick={() => setTagSelect(category)}>{category}</button>
+            <button class="text-black rounded-md px-2 py-1 border-2 border-black" style={{"background-color": tagCoor[category]}} onClick={() => setTagSelect(category)}>{category}</button>
         )
     }
 
     return(
         <div class="flex flex-col md:flex-row overflow-hidden">
             <div class="mt-8 flex flex-col p-4 gap-8 ">
-                <h2 class="text-center text-3xl font-extrabold text-[#d3cece]">Blog Posts</h2>
+                <h2 class="text-center text-3xl font-extrabold">Blog Posts</h2>
                 <div class="flex flex-col w-64 p-2 font-bold gap-2 ">
                     <div class="justify-between text-center">
-                        <button class="px-2 rounded-md bg-red-300 border-2 border-black" onClick={() => setTagSelect("All")}>Sort By Date</button>
+                        <button class="px-2 rounded-md bg-red-300 border-2 border-black text-black" onClick={() => setTagSelect("All")}>Sort By Date</button>
                     </div>
                     <div class="flex flex-row place-content-center">
-                        <p class=" self-center text-[#d3cece]">Or Tags:</p>
+                        <p class=" self-center">Or Tags:</p>
                     </div>
                     <div class="flex flex-row flex-wrap gap-2 ">
                         {uniqueTags.map(category => Tag(category))}

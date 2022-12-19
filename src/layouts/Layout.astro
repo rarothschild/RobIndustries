@@ -8,6 +8,8 @@ export interface Props {
 
 const { title } = Astro.props as Props;
 
+const initTheme = localStorage.getItem('data-theme')
+
 ---
 
 <!DOCTYPE html>
@@ -27,8 +29,8 @@ const { title } = Astro.props as Props;
 		<title>{title}</title>
 	</head>
 	<body class="overflow-y-scroll scrollbar bg-[color:var(--color-bg)] text-[color:var(--color-text)] ">
-		<div class="max-w-7xl mx-auto bg-[#353038]">
-			<Header />
+		<div class="max-w-7xl mx-auto bg-[color:var(--color-content)]">
+			<Header initTheme={initTheme}/>
 			<slot />
 		</div>
 	</body>

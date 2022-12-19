@@ -21,6 +21,7 @@
     "@types/react": "^18.0.25",
     "@types/react-dom": "^18.0.9",
     "astro": "^1.6.8",
+    "astro-m2dx": "^0.7.15",
     "autoprefixer": "^10.4.7",
     "canvas-confetti": "^1.5.1",
     "postcss": "^8.4.14",

@@ -26,12 +26,12 @@ const {
             <div class="py-8">
                 {image && <Image height={250} aspectRatio="16:9" format="jpeg" src={image} alt="" />}
             </div>
-            <div class="pb-8 text-center text-[#d3cece]">
+            <div class="pb-8 text-center">
                 <h1 class="font-extrabold text-3xl">{title}</h1>
                 { pubDate && <h2 class="font-bold text-xl">{pubDate}</h2> }
                 { updatedDate && (<div>Last updated on <time>{updatedDate}</time></div>)}
             </div>
-            <div class="grid gap-4 pb-8 font-medium  text-[#d3cece]">
+            <div class="grid gap-4 pb-8 font-medium ">
                 <slot />
             </div>
         </div>
