@@ -26,7 +26,7 @@ const initTheme = localStorage.getItem('data-theme')
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body class="pb-16 overflow-y-scroll scrollbar bg-[color:var(--color-bg)] text-[color:var(--color-text)] ">
+	<body class="pb-8 overflow-y-scroll scrollbar bg-[color:var(--color-bg)] text-[color:var(--color-text)] ">
 		<Header initTheme={initTheme}/>
 		<slot />
 	</body>
