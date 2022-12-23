@@ -5,9 +5,10 @@ import logo1 from '../images/logos/logoPython.png'
 import logo2 from '../images/logos/logoMatlab.png'
 import logo3 from '../images/logos/logoJS.png'
 import logoTS from '../images/logos/logoTS.jpg'
+import logoSQL from '../images/logos/Sql_data_base_with_logo.png'
 import logo4 from '../images/logos/logoHtml.png'
 import logo5 from '../images/logos/logoCss.png'
-const logosLanguages = [logo1,logo2,logo3,logoTS,,logo4,logo5]
+const logosLanguages = [logo1,logo2,logo3,logoTS,logoSQL,logo4,logo5,]
 
 import logoSolid from '../images/logos/logoSolid.png'
 import logoReact from '../images/logos/logoReact.png'
@@ -19,9 +20,9 @@ const logosFrameworks = [logoDjango,logoSolid,logoReact,logoGCP,logoAstro,logoLa
 
 ---
 
-<div class="w-[30rem] grid px-4 py-2  bg-[color:var(--color-content)] border-2 border-[color:var(--color-border)]">
+<div class="grid px-4 py-2 overflow-clip bg-[color:var(--color-content)] border-2 border-[color:var(--color-border)]">
     <div class="mb-2 px-4 py-1 place-self-center border-2 border-[color:var(--color-border)] bg-[color:var(--color-bg)]"><h2 class="font-bold text-xl">My Toolbox</h2></div>
-    <div class="divide-y-2 divide-[color:var(--color-border)]">
+    <div class="p-2 divide-y-2 divide-[color:var(--color-border)]">
         <div class="flex gap-2 p-2  mx-auto ">
             {logosLanguages.map(logo => <Image src={logo} alt="Tool logo" height="50"/>)}
         </div>
