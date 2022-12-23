@@ -15,7 +15,8 @@
   --color-bg: #dbd8d8;
   --color-header: #b1b1b1;
   --color-text: #363333;
-  --color-content: #817363;
+  --color-content: #b3a392;
+  --color-border: #363333;
 }
 
 [data-theme="dark"] {
@@ -23,6 +24,7 @@
   --color-header: #221f24;
   --color-text: #d3cece;
   --color-content: #6b6a6b;
+  --color-border: #d3cece;
 }
 
 [data-theme="light"] #themePicker {

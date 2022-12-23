@@ -1,11 +1,6 @@
 ---
 import { Image } from '@astrojs/image/components';
 
-
-
-
-
-
 import logo1 from '../images/logos/logoPython.png'
 import logo2 from '../images/logos/logoMatlab.png'
 import logo3 from '../images/logos/logoJS.png'
@@ -19,21 +14,19 @@ import logoReact from '../images/logos/logoReact.png'
 import logoDjango from '../images/logos/logoDjango.jpeg'
 import logoAstro from '../images/logos/logoAstro.png'
 import logoGCP from '../images/logos/logoGCP.png'
-const logosFrameworks = [logoSolid,logoReact,logoDjango,logoGCP,logoAstro]
+import logoLatex from '../images/logos/logoLatex.png'
+const logosFrameworks = [logoDjango,logoSolid,logoReact,logoGCP,logoAstro,logoLatex]
 
-import logo8 from '../images/logos/logoLatex.png'
-const logosOther = [logo8]
 ---
 
-<div class="grid items-center pb-6 divide-y">
-    <div class=" px-4 place-self-center "><h2 class="font-bold text-xl">My Toolbox</h2></div>
-    <div class="flex flex-row gap-2 p-2 w-[28rem]  mx-auto border-y-2">
-        {logosLanguages.map(logo => <Image src={logo} alt="Tool logo" height="50"/>)}
-    </div>
-    <div class="flex flex-row gap-2 p-2 w-[28rem]  mx-auto border-b-2">
-        {logosFrameworks.map(logo => <Image src={logo} alt="Tool logo" height="50"/>)}
-    </div>
-    <div class="flex flex-row gap-2 p-2 w-[28rem]  mx-auto border-b-2">
-        {logosOther.map(logo => <Image src={logo} alt="Tool logo" height="50"/>)}
+<div class="w-[30rem] grid px-4 py-2  bg-[color:var(--color-content)] border-2 border-[color:var(--color-border)]">
+    <div class="mb-2 px-4 place-self-center border-2 border-[color:var(--color-border)]"><h2 class="font-bold text-xl">My Toolbox</h2></div>
+    <div class="divide-y-2 ">
+        <div class="flex gap-2 p-2   mx-auto ">
+            {logosLanguages.map(logo => <Image src={logo} alt="Tool logo" height="50"/>)}
+        </div>
+        <div class="flex gap-2 p-2 pb-0  mx-auto ">
+            {logosFrameworks.map(logo => <Image src={logo} alt="Tool logo" height="50"/>)}
+        </div>
     </div>
 </div>
