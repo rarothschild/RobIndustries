@@ -56,7 +56,7 @@ export default function BlogList(props) {
     }
 
     return(
-        <div class="w-full flex px-4 max-w-[100rem] mx-auto">
+        <div class="w-full flex flex-col lg:flex-row px-4 max-w-[100rem] mx-auto">
             <div class="basis-1/4 flex flex-col p-4 gap-8 ">
                 <h2 class="text-center text-3xl font-extrabold">Blog Posts</h2>
                 <div class="flex flex-col p-2 font-bold gap-2 ">

@@ -14,7 +14,7 @@ const minH = Math.min(...(Photos.map(photo => photo.default.height)))
     }
 
     .marquee-item {
-        flex: 0 0 25vw;
+        flex: 0 0 30vw;
         margin: 0 1vw;
         /*   flex: 0 0 20vw; */
         /*   margin: 0 2vw; */
@@ -33,11 +33,11 @@ const minH = Math.min(...(Photos.map(photo => photo.default.height)))
 
 </style>
 
-<div class="marquee flex overflow-x-hidden max-w-[100rem]  mx-auto">
-    <div class="marquee-content">
+<div class="marquee p-2 flex max-h-80 overflow-hidden max-w-[100rem]  mx-auto">
+    <div class="marquee-content items-center">
         {Photos.map(photo => 
             <div class="marquee-item">
-                <Image alt="" src={photo.default} />
+                <Image alt="" src={photo.default}  />
             </div>
         )}
         {Photos.map(photo => 
