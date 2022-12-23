@@ -23,15 +23,11 @@ const initTheme = localStorage.getItem('data-theme')
 		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 		<link rel="manifest" href="/site.webmanifest">
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
-		<link href="https://cdn.jsdelivr.net/npm/swiffy-slider@1.5.3/dist/css/swiffy-slider.min.css" rel="stylesheet" crossorigin="anonymous">
-		<script src="https://cdn.jsdelivr.net/npm/swiffy-slider@1.5.3/dist/js/swiffy-slider.min.js" crossorigin="anonymous" defer></script>
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body class="overflow-y-scroll scrollbar bg-[color:var(--color-bg)] text-[color:var(--color-text)] ">
-		<div class="max-w-7xl mx-auto bg-[color:var(--color-content)]">
-			<Header initTheme={initTheme}/>
-			<slot />
-		</div>
+	<body class="pb-16 overflow-y-scroll scrollbar bg-[color:var(--color-bg)] text-[color:var(--color-text)] ">
+		<Header initTheme={initTheme}/>
+		<slot />
 	</body>
 </html>

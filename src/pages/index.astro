@@ -1,31 +1,23 @@
 ---
 import { Image } from '@astrojs/image/components';
+import Marquee from '@components/Marquee.astro';
+import Toolbox from '@components/Toolbox.astro';
 
 import BlogList from '../components/BlogList.jsx';
 import Layout from '../layouts/Layout.astro';
 
-import logo1 from '../images/logos/logoPython.png'
-import logo2 from '../images/logos/logoMatlab.png'
-import logo3 from '../images/logos/logoJS.png'
-import logo4 from '../images/logos/logoHtml.png'
-import logo5 from '../images/logos/logoCss.png'
-import logo6 from '../images/logos/logoDjango.jpeg'
-import logo7 from '../images/logos/logoGCP.png'
-import logo8 from '../images/logos/logoLatex.png'
-const logos = [logo1,logo2,logo3,logo4,logo5,logo6,logo7,logo8]
+import mainPic from './src/images/me/1604250876014182408.jpg'
 
-const Photos = await Astro.glob('../images/MainPage/*.jpg')
-const minH = Math.min(...(Photos.map(photo => photo.default.height)))
 const posts = (await Astro.glob('/src/pages/blogs/*.{md,mdx}')).sort(
 	(a, b) => new Date(b.frontmatter.pubDate).valueOf() - new Date(a.frontmatter.pubDate).valueOf()
 );
 ---
 
 <Layout title="Rob Rothschild">
-	<div class="flex flex-col p-4 pt-12 gap-20 ">
-		<div class="px-2 grid grid-cols-1 lg:grid-cols-2 gap-4 place-items-center">
-			<div class="max-w-2xl flex flex-col gap-4 ">
-				<div class="text-center font-extrabold text-3xl">
+	<div class="flex flex-col pt-12 gap-20 justify-items-center">
+		<div class="max-w-[90rem] mx-auto px-2 grid grid-cols-1 lg:grid-cols-2 gap-8 text-center">
+			<div class="max-w-2xl flex flex-col gap-8 ">
+				<div class="font-extrabold text-3xl">
 					<p>Welcome to my Portfolio Site</p>
 				</div>
 				<div class="grid gap-2 font-bold text-md">
@@ -33,26 +25,13 @@ const posts = (await Astro.glob('/src/pages/blogs/*.{md,mdx}')).sort(
 					<p>Current resident of Bellingham WA, I'm teaching myself web development while exporing the PNW. I went to school at Fort Lewis in Durango CO where I recived my B.S. in Engineering. After that I worked as an Aerospace Engineer at The Heliospace Corporation 
 						for five years.</p>
 				</div>
-				<div class="grid items-center pb-6">
-					<div class=" px-4 place-self-center border-x-2 border-t-2 border-black text-black bg-slate-400 shadow-[-10px_10px_0px_0px_rgba(0,0,0,0.3)]"><h2 class="font-bold text-xl">My Toolbox</h2></div>
-					<div class="flex flex-row gap-2 p-2 w-[28rem]  overflow-x-scroll scrollbar mx-auto border-2 shadow-[-10px_10px_0px_0px_rgba(0,0,0,0.3)] border-black bg-slate-400">
-						{logos.map(logo => <Image src={logo} alt="Tool logo" height="60"/>)}
-					</div>
-				</div>
+				<Toolbox />
 			</div>
-			<div class="grid ">
-				<div class="max-w-2xl swiffy-slider slider-item-reveal slider-nav-caretfill slider-nav-visible slider-indicators-square">
-					<ul class="slider-container">
-						{Photos.map(photo => 
-							<li class="slide-visible">
-								<div><Image class="shadow-lg" alt="" src={photo.default} height={minH} /></div>
-							</li> )}
-					</ul>
-					<button type="button" class="slider-nav"></button>
-					<button type="button" class="slider-nav slider-nav-next"></button>
-				</div>
+			<div class="max-w-[40rem] place-self-center">
+				<Image class="" alt="JWST Team Photo" src={mainPic} />
 			</div>
 		</div>
+		<Marquee />
 		<BlogList blogs={posts} client:load />
 	</div>
 </Layout>

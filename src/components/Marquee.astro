@@ -1,0 +1,49 @@
+---
+import { Image } from "@astrojs/image/components";
+
+const Photos = await Astro.glob('../images/MainPage/*.jpg')
+const minH = Math.min(...(Photos.map(photo => photo.default.height)))
+
+---
+
+<style>
+
+    .marquee-content {
+        display: flex;
+        animation: scrolling 180s linear infinite;
+    }
+
+    .marquee-item {
+        flex: 0 0 25vw;
+        margin: 0 1vw;
+        /*   flex: 0 0 20vw; */
+        /*   margin: 0 2vw; */
+    }
+
+    .marquee-item img {
+        display: block;
+        width: 100%;
+        /*   padding: 0 20px; */
+    }
+
+    @keyframes scrolling {
+        0% { transform: translateX(0%); }
+        100% { transform: translatex(-234vw); }
+    }
+
+</style>
+
+<div class="marquee flex overflow-x-hidden max-w-[100rem]  mx-auto">
+    <div class="marquee-content">
+        {Photos.map(photo => 
+            <div class="marquee-item">
+                <Image alt="" src={photo.default} />
+            </div>
+        )}
+        {Photos.map(photo => 
+            <div class="marquee-item">
+                <Image alt="" src={photo.default}  />
+            </div>
+        )}
+    </div>
+</div>
