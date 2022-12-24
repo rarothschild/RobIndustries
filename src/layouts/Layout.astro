@@ -28,6 +28,7 @@ const initTheme = localStorage.getItem('data-theme')
 	</head>
 	<body class="pb-8 overflow-y-scroll scrollbar bg-[color:var(--color-bg)] text-[color:var(--color-text)] ">
 		<Header initTheme={initTheme}/>
-		<slot />
+		<div class="px-2"><slot /></div>
+		
 	</body>
 </html>

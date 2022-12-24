@@ -33,8 +33,8 @@ export default function BlogList(props) {
     
     function PostPreview(post) {
         return (
-            <a href={post.url} class="w-80 min-w-[20rem] rounded-md border-2 border-black bg-[color:var(--color-bg)] ">
-                <div class="">
+            <a href={post.url} class="w-80 min-w-[20rem] rounded-md border-2 border-black bg-[color:var(--color-section)] ">
+                <div class=" bg-[color:var(--color-bg)]">
                     <img class="object-contain h-52 mx-auto " src={post.frontmatter.image} alt="Tool logo" />
                 </div>
                 <h3 class="pt-2 text-center font-extrabold text-lg ">{post.frontmatter.title}</h3>
@@ -56,8 +56,8 @@ export default function BlogList(props) {
     }
 
     return(
-        <div class="w-full flex flex-col lg:flex-row px-4 max-w-[100rem] mx-auto">
-            <div class="basis-1/4 flex flex-col p-4 gap-8 ">
+        <div class="w-full flex max-w-[94rem] flex-col lg:flex-row bg-[color:var(--color-section)] border-2 border-[color:var(--color-border)]">
+            <div class="flex flex-col px-2 py-4 gap-2">
                 <h2 class="text-center text-3xl font-extrabold">Blog Posts</h2>
                 <div class="flex flex-col p-2 font-bold gap-2 ">
                     <div class="justify-between text-center">
@@ -66,13 +66,15 @@ export default function BlogList(props) {
                     <div class="flex flex-row place-content-center">
                         <p class=" self-center">Or Tags:</p>
                     </div>
-                    <div class="flex flex-row flex-wrap gap-2 ">
+                    <div class="flex flex-row flex-wrap gap-2 max-w-2xl ">
                         {uniqueTags.map(category => Tag(category))}
                     </div>
                 </div>
             </div>
-            <div class="w-full flex gap-6 p-6 overflow-x-scroll scrollbar bg-[color:var(--color-content)]">
-                {showBlogs().map(blog => PostPreview(blog))}
+            <div class="w-full bg-[color:var(--color-content)]">
+                <div class="flex flex-row flex-wrap gap-6 p-6 justify-center ">
+                    {showBlogs().map(blog => PostPreview(blog))}
+                </div>
             </div>
         </div>
     )

@@ -21,7 +21,7 @@ export default function ThemeSwitcher(props) {
     }
 
     return (
-        <div class="grid justify-center overflow-hidden w-14 absolute top-0">
+        <div class="grid justify-center overflow-hidden w-14 absolute md:bottom-0 left-0">
             <svg onClick={()=>themeClick()} width="120" height="50" viewBox="0 0 120 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g id="themePicker">
                 <path id="Vector 1" d="M81.0026 25.6856C80.6542 5.43189 115.251 1.72092 103.79 7.41611C92.3294 13.1113 89.7638 35.3976 103.79 41.8171C117.817 48.2367 81.351 45.9392 81.0026 25.6856Z" fill="#5D5F61" stroke="#405377" stroke-opacity="0.39"/>

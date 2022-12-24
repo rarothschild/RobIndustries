@@ -4,14 +4,14 @@ import ThemeSwitcher from './ThemeSwitcher';
 import MainPic from '../images/me/Main.jpg'
 ---
 
-<div class="relative py-2 bg-[color:var(--color-header)]">
+<div class="w-full relative p-2 justify-center bg-[color:var(--color-header)] border-b-2 border-[color:var(--color-border)] ">
     <ThemeSwitcher client:load/>
-    <div class="mx-auto flex flex-col md:flex-row max-w-7xl justify-between">
-        <div class=" basis-1/2 w-full pb-1 text-center place-self-center">
-            <a href="../../" class=" text-6xl md:text-6xl font-extrabold ">Rob Rothschild</a>
+    <div class="flex flex-col md:flex-row mx-auto max-w-[90rem] justify-between">
+        <div class="w-full pb-1 md:ml-14 place-self-end text-center md:text-left">
+            <a href="../../" class=" text-4xl md:text-[4.5rem] font-extrabold ">Rob Rothschild</a>
         </div>
-        <div class="flex flex-row p-2 mr-4">
-            <div class=" px-6 font-bold text-lg gap-1">
+        <div class="flex gap-6 py-2 md:mr-6">
+            <div class="mx-auto font-bold text-lg gap-1">
                 <p class="pb-1 underline font-extrabold text-center">Find me on:</p>
                 <div class="flex flex-row gap-4 md:gap-1 md:flex-col">
                         <a href="https://github.com/rarothschild" class="button is-small is-github flex">
@@ -28,8 +28,8 @@ import MainPic from '../images/me/Main.jpg'
                         </a>
                 </div>
             </div>
-            <div class="hidden md:block">
-                <Image src={MainPic} alt="Main Photo" height={125} />
+            <div class=" hidden lg:grid items-center">
+                <Image src={MainPic} alt="Main Photo" height={200} />
             </div>
         </div>
     </div>

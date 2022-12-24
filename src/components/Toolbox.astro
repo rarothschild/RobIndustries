@@ -16,13 +16,14 @@ import logoDjango from '../images/logos/logoDjango.jpeg'
 import logoAstro from '../images/logos/logoAstro.png'
 import logoGCP from '../images/logos/logoGCP.png'
 import logoLatex from '../images/logos/logoLatex.png'
-const logosFrameworks = [logoDjango,logoSolid,logoReact,logoGCP,logoAstro,logoLatex]
+import logoTailwind from '../images/logos/logoTailwind.png'
+const logosFrameworks = [logoDjango,logoSolid,logoReact,logoGCP,logoAstro,logoTailwind]
 
 ---
 
 <div class="grid px-4 py-2 overflow-clip bg-[color:var(--color-content)] border-2 border-[color:var(--color-border)]">
-    <div class="mb-2 px-4 py-1 place-self-center border-2 border-[color:var(--color-border)] bg-[color:var(--color-bg)]"><h2 class="font-bold text-xl">My Toolbox</h2></div>
-    <div class="p-2 divide-y-2 divide-[color:var(--color-border)]">
+    <div class=" px-4 py-1 place-self-center border-2 border-[color:var(--color-border)] bg-[color:var(--color-bg)]"><h2 class="font-bold text-xl">My Toolbox</h2></div>
+    <div class="grid p-2 divide-y-2 divide-[color:var(--color-border)] items-center">
         <div class="flex gap-2 p-2  mx-auto ">
             {logosLanguages.map(logo => <Image src={logo} alt="Tool logo" height="50"/>)}
         </div>

@@ -12,18 +12,20 @@
 }
 
 [data-theme="light"] {
-  --color-bg: #dbd8d8;
-  --color-header: #b1b1b1;
+  --color-bg: #ebe8e8;
+  --color-header: #c7b8b2;
   --color-text: #363333;
-  --color-content: #b3a392;
-  --color-border: #363333;
+  --color-section: #d6cdcd;
+  --color-content: #c0b1a1;
+  --color-border: #616060;
 }
 
 [data-theme="dark"] {
-  --color-bg: #393842;
-  --color-header: #221f24;
+  --color-bg: #333336;
+  --color-header: #161418;
   --color-text: #d3cece;
-  --color-content: #6b6a6b;
+  --color-section: #393842;
+  --color-content: #888788;
   --color-border: #d3cece;
 }
 
