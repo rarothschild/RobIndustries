@@ -2,12 +2,14 @@
 import { Image } from '@astrojs/image/components';
 import Marquee from '@components/Marquee.astro';
 import Toolbox from '@components/Toolbox.astro';
+import FeaturedProjects from '@components/FeaturedProjects.astro';
 
-import BlogList from '../components/BlogList.jsx';
 import Layout from '../layouts/Layout.astro';
 
 import mainPic from '../images/me/1604250876014182408.jpg'
+import BlogLayout from 'src/layouts/BlogLayout.astro';
 
+import BlogList from '../components/BlogList.jsx';
 const posts = (await Astro.glob('/src/pages/blogs/*.{md,mdx}')).sort(
 	(a, b) => new Date(b.frontmatter.pubDate).valueOf() - new Date(a.frontmatter.pubDate).valueOf()
 );
@@ -32,6 +34,6 @@ const posts = (await Astro.glob('/src/pages/blogs/*.{md,mdx}')).sort(
 			</div>
 		</div>
 		<Marquee />
-		<BlogList blogs={posts} client:load />
+		<FeaturedProjects />
 	</div>
 </Layout>
