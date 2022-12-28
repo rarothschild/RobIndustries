@@ -16,24 +16,28 @@ const posts = (await Astro.glob('/src/pages/blogs/*.{md,mdx}')).sort(
 ---
 
 <Layout title="Rob Rothschild">
-	<div class="flex flex-col pt-12 gap-16 place-items-center">
-		<div class="max-w-[90rem] px-4 py-8 grid grid-cols-1 lg:grid-cols-2 gap-8 text-center bg-[color:var(--color-section)] border-2 border-[color:var(--color-border)] ">
-			<div class="max-w-2xl flex flex-col gap-4 items-center">
-				<div class="font-extrabold text-3xl">
-					<p>Welcome to my Portfolio Site</p>
+	<div class="flex flex-col p-4 gap-8 place-items-center">
+		<div class="grid max-w-[90rem] p-4 gap-4 bg-[color:var(--color-section)] border-2 border-[color:var(--color-border)]">
+			<div class="grid grid-cols-1 lg:grid-cols-2 gap-4 text-center ">
+				<div class="max-w-2xl flex flex-col gap-4 items-center mx-auto">
+					<div class="grid gap-2">
+						<p class="font-extrabold text-3xl">Welcome to my Portfolio Site</p>
+						<p class="font-bold text-md">I'm a lover of all things Software, Aerospace, and Robotics</p>
+					</div>
+					<div class="grid gap-2 font-bold text-md pb-4">
+						<p>Current based in Bellingham WA, I'm teaching myself web development and other software skills while exporing the PNW. I went to school at Fort Lewis in Durango CO where I recived my B.S. in Engineering. After that I worked as an Aerospace Engineer at The Heliospace Corporation 
+							for five years, Proudly working on projects like the James Webb Space Telescope, Mars Sample Return, and the HERMES experiement package going on the Lunar Gateway.</p>
+					</div>
+					<Toolbox />
 				</div>
-				<p class="font-bold text-md">I'm a lover of all things Aerospace, Robotics, and Software</p>
-				<div class="grid gap-2 font-bold text-md pb-4">
-					<p>Current resident of Bellingham WA, I'm teaching myself web development while exporing the PNW. I went to school at Fort Lewis in Durango CO where I recived my B.S. in Engineering. After that I worked as an Aerospace Engineer at The Heliospace Corporation 
-						for five years.</p>
+				<div class="max-w-[40rem] place-self-center">
+					<Image class="" alt="JWST Team Photo" format="webp" src={mainPic} />
 				</div>
-				<Toolbox />
 			</div>
-			<div class="max-w-[40rem] place-self-center">
-				<Image class="" alt="JWST Team Photo" src={mainPic} />
-			</div>
+			<div class="hidden md:block"><Marquee /></div>
+			
 		</div>
-		<Marquee />
+		<BlogList client:load blogs={posts}/>
 		<FeaturedProjects />
 	</div>
 </Layout>

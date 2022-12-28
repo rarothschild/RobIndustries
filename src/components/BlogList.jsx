@@ -33,14 +33,13 @@ export default function BlogList(props) {
     
     function PostPreview(post) {
         return (
-            <a href={post.url} class="w-80 min-w-[20rem] rounded-md border-2 border-black bg-[color:var(--color-section)] ">
-                <div class=" bg-[color:var(--color-bg)]">
-                    <img class="object-contain h-52 mx-auto " src={post.frontmatter.image} alt="Tool logo" />
+            <a href={post.url} class="w-full p-2 md:flex items-center rounded-md border-2 border-black bg-[color:var(--color-section)] ">
+                <div class="md:w-52">
+                    <h3 class="text-center font-extrabold text-lg ">{post.frontmatter.title}</h3>
+                    <p class="text-center font-medium text-lg">{post.frontmatter.pubDate}</p>
                 </div>
-                <h3 class="pt-2 text-center font-extrabold text-lg ">{post.frontmatter.title}</h3>
-                <p class="text-center font-medium text-lg">{post.frontmatter.pubDate}</p>
-                <p class="p-2 min-h-[5rem] text-center font-medium text-lg">{post.frontmatter.description}</p>
-                <div class="flex flex-row flex-wrap gap-2 px-2 py-1 font-bold ">
+                <p class="grow max-w-md p-2 text-center font-medium text-lg">{post.frontmatter.description}</p>
+                <div class="ml-auto pr-2 justify-end flex flex-wrap gap-2 p-1 font-bold ">
                     {post.frontmatter.categories.map(cat => 
                         <div class="rounded-md px-2 py-1 border-2 border-black text-black" style={{"background-color": tagCoor[cat]}}>{cat}</div>)}
                 </div>
@@ -56,7 +55,7 @@ export default function BlogList(props) {
     }
 
     return(
-        <div class="w-full flex max-w-[94rem] flex-col lg:flex-row bg-[color:var(--color-section)] border-2 border-[color:var(--color-border)]">
+        <div class="w-full flex max-w-[94rem] h-96 flex-col lg:flex-row bg-[color:var(--color-section)] border-2 border-[color:var(--color-border)]">
             <div class="flex flex-col px-2 py-4 gap-2">
                 <h2 class="text-center text-3xl font-extrabold">Blog Posts</h2>
                 <div class="flex flex-col p-2 font-bold gap-2 ">
@@ -71,8 +70,8 @@ export default function BlogList(props) {
                     </div>
                 </div>
             </div>
-            <div class="w-full bg-[color:var(--color-content)]">
-                <div class="flex flex-row flex-wrap gap-6 p-6 justify-center ">
+            <div class="w-full bg-[color:var(--color-content)] overflow-y-scroll scrollbar">
+                <div class="flex flex-row flex-wrap gap-4 p-6 justify-center ">
                     {showBlogs().map(blog => PostPreview(blog))}
                 </div>
             </div>

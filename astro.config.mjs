@@ -15,7 +15,7 @@ const m2dxOptions = {
 // https://astro.build/config
 export default defineConfig({
   site: 'https://robrothschild.com',
-  integrations: [mdx(), tailwind(), image(), sitemap(), react(), solidJs()],
+  integrations: [mdx(), tailwind(), image({serviceEntryPoint: '@astrojs/image/sharp'}), sitemap(), react(), solidJs()],
   markdown: {
     drafts: true,
     remarkPlugins: [[m2dx, m2dxOptions]],

@@ -37,12 +37,12 @@ const minH = Math.min(...(Photos.map(photo => photo.default.height)))
     <div class="marquee-content items-center">
         {Photos.map(photo => 
             <div class="marquee-item">
-                <Image alt="" src={photo.default}  />
+                <Image alt="" src={photo.default} format="webp"  />
             </div>
         )}
         {Photos.map(photo => 
             <div class="marquee-item">
-                <Image alt="" src={photo.default}  />
+                <Image alt="" src={photo.default} format="webp" />
             </div>
         )}
     </div>

@@ -2,7 +2,7 @@
 import { Image } from '@astrojs/image/components';
 
 import  projPic1 from '../images/projects/HouseHold.jpg'
-import  projPic2 from '../images/projects/LondonderryQuarry.jpg'
+import  projPic2 from '../images/projects/Assetium.png'
 import  projPic3 from '../images/projects/StockTrading.png'
 import  projPic4 from '../images/projects/ImageProcessing.png'
 
@@ -30,21 +30,21 @@ const projects = [{
 
 ---
 
-<div class=" max-w-[105rem] p-6  bg-[color:var(--color-section)] border-2 border-[color:var(--color-border)]">
+<div class=" max-w-[95rem] p-6  bg-[color:var(--color-section)] border-2 border-[color:var(--color-border)]">
     <div class= "text-center pb-6">
         <h1 class="text-3xl font-bold">Active Projects</h1>
         <p class="font-semibold text-xl">Here is a collection of projects I'm currently working on. </p>
     </div>
     <div class="flex flex-wrap justify-center gap-6">
     {projects.map((proj)=> 
-        <div class="flex bg-[color:var(--color-content)] border-2 border-[color:var(--color-border)]">
-            <Image src={proj.image} alt="Project Image" height={300} width={400}/>
+        <div class="md:flex bg-[color:var(--color-content)] border-2 border-[color:var(--color-border)]">
+            <Image src={proj.image} alt="Project Image" format='webp' height={300} width={300} fit="fill" />
             <div class="flex flex-col  p-2 gap-2 divide-y max-w-sm ">
                 <h2 class="px-2 h-12 font-bold text-2xl">{proj.name}</h2>
                 <p class="p-2 h-full font-semibold">{proj.description}</p>
                 <div class="p-2 flex flex-wrap gap-2">
                     {proj.tags.map((tag) =>
-                        <div class="py-1 px-2 bg-cyan-300 font-bold text-lg border-2 border-[color:var(--color-border)] text-black">
+                        <div class="py-1 px-2 bg-cyan-300 font-bold text-lg border-2 border-black text-black">
                             {tag}
                         </div>
                     )}
